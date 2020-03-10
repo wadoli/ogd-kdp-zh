@@ -1,8 +1,8 @@
 name: Download Objektliste To Workspace
-  uses: carlosperate/download-file-action@v1.0.0
-  id: download-objektliste
-  with:
-    file-url: 'https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv'
+uses: carlosperate/download-file-action@v1.0.0
+id: download-objektliste
+with:
+  file-url: 'https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv'
 on:
   schedule:
     - cron:  '0 12 * * *'
