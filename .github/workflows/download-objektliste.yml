@@ -1,8 +1,17 @@
-name: Download Objektliste To Workspace
-uses: carlosperate/download-file-action@v1.0.0
-id: download-objektliste
-with:
-  file-url: 'https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv'
+name: Action to download Objektliste to workspace
+
 on:
   schedule:
     - cron:  '0 12 * * *'
+
+jobs:
+  download-objektliste:
+    name: Job to download Objektliste
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step to download Objektliste
+        uses: carlosperate/download-file-action@v1.0.0
+        id: download-objektliste
+        with:
+          file-url: 'https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv'
+      - run: echo "The Objektliste was downloaded to ${{ steps.download-objektliste.outputs.file-path }}"
