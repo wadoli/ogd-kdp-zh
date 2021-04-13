@@ -2,7 +2,7 @@
 
 ## Inventar der Denkmalschutzobjekte von überkommunaler Bedeutung
 
-Das Inventar bildet die Grundlage für die Arbeit der [Denkmalpflege](https://zh.ch/denkmalpflege). Es setzt sich zusammen aus der [Objektliste](#objektliste_denkmalschutzobjekte) und den [Inventarblättern](#inventarblätter). Weitere Informationen: https://zh.ch/denkmalinventar
+Das Inventar bildet die Grundlage für die Arbeit der [Denkmalpflege](https://zh.ch/denkmalpflege). Es setzt sich zusammen aus der [Objektliste](#objektliste-denkmalschutzobjekte) und den [Inventarblättern](#inventarblätter). Weitere Informationen: https://zh.ch/denkmalinventar
 
 ### Objektliste Denkmalschutzobjekte
 
@@ -32,7 +32,7 @@ Bisher festgesetzt und veröffentlicht sind die Inventarblätter der Planungsreg
 * Knonaueramt
 * Limmattal
 
-Auf welche Objekte in der Objektliste sich ein Inventarblatt bezieht, kann über die Verlinkung des PDFs in der Tabellenspalte "publiziertes PDF"  der [Objektliste](#objektliste_denkmalschutzobjekte) ermittelt werden.
+Auf welche Objekte in der Objektliste sich ein Inventarblatt bezieht, kann über die Verlinkung des PDFs in der Tabellenspalte "publiziertes PDF"  der [Objektliste](#objektliste-denkmalschutzobjekte) ermittelt werden.
 
 ### Kontakt
 
