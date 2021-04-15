@@ -32,13 +32,13 @@ Die Objektliste im **CSV**-Format enthält duplizierte Objektzeilen, um genau ei
 
 ### Polygone zu Objektliste 🗾
 
-Die Objektliste enthält nur Punkt-Koordinaten. Im Rahmen der Erarbeitung der Inventarblätter hat die Denkmalpflege für die festgesetzten Planungsregionen zusätzlich Polygone (Objekte und Umgebungsflächen) erfasst, welche ebenfalls als offene Behördendaten bezogen werden können.
+Die [Objektliste](#objektliste-denkmalschutzobjekte) enthält nur Punkt-Koordinaten. Im Rahmen der Erarbeitung der Inventarblätter hat die Denkmalpflege für die festgesetzten Planungsregionen zusätzlich Polygone (Objekte und Umgebungsflächen) erfasst, welche ebenfalls als offene Behördendaten bezogen werden können und über die ODB-ID mit der Objektliste in Beziehung gesetzt werden können.
 
 Formate:
 * ESRI **Shapefile**: Download via [GIS-Browser des Kantons Zürich](https://maps.zh.ch): http://maps.zh.ch/?topic=BASISKARTEZH&amp;showtab=ogddownload (Unter «Format festlegen, Produkt bestellen» Radiobutton «Alle Produkte» auswählen, danach Produkt Nr. 517 «Denkmalschutzobjekte Polygone (OGD)» und Format «ESRI Shapefile (.shp)» wählen,  vgl. zusätzlich [Spezifikation REST-Schnittstelle für Datenbezug zur Einbindung in eigene Applikationen](https://www.zh.ch/de/planen-bauen/geoinformation/geodaten/geodatenshop.html#-51465694))
 * **WFS**-Webservice: https://maps.zh.ch/wfs/OGDZHWFS (vgl. https://geolion.zh.ch/geodatenservice/2030)
 
-Die Polygone kommen direkt und auf dem jeweils aktuellsten Stand aus der kantonalen GIS-Infrastruktur.
+Die Polygone sind auf dem Stand der Erstellung des Inventarblatts zum zugehörigen Objekt.
 
 ### Inventarblätter 📄
 
