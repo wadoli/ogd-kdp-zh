@@ -10,7 +10,7 @@ In der Objektliste sind alle überkommunal, das heisst kantonal oder regional ei
 
 Formate:
 * **CSV**: https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv (Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/denkmalschutzobjekte2)
-* Verschiedene Dateiformate via [GIS-Browser des Kantons Zürich](https://maps.zh.ch): http://maps.zh.ch/?topic=ArchDenkmalZH&amp;showtab=ogddownload (Vgl. [Spezifikation REST-Schnittstelle für Datenbezug zur Einbindung in eigene Applikationen](https://www.zh.ch/de/planen-bauen/geoinformation/geodaten/geodatenshop.html#-51465694))
+* Verschiedene Dateiformate via [GIS-Browser des Kantons Zürich](https://maps.zh.ch): http://maps.zh.ch/?topic=ArchDenkmalZH&amp;showtab=ogddownload (vgl. [Spezifikation REST-Schnittstelle für Datenbezug zur Einbindung in eigene Applikationen](https://www.zh.ch/de/planen-bauen/geoinformation/geodaten/geodatenshop.html#-51465694))
 * **WMS**-Webservice: https://wms.zh.ch/OGDArchDenkmalZH (vgl. https://geolion.zh.ch/geodatenservice/2094, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wms-denkmalschutzobjekte1)
  * **WFS**-Webservice: https://maps.zh.ch/wfs/OGDZHWFS (vgl. https://geolion.zh.ch/geodatenservice/2030, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wfs-denkmalschutzobjekte1)
 
