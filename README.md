@@ -20,7 +20,7 @@ Die **CSV**-Datei entspricht dem CSV-Format der deutschsprachigen Microsoft Exce
 
 Zur Nutzung und Validierung der Objektliste im **CSV**-Format gibt es in diesem Repository ein [Data Package](datapackage.json), welches den Aufbau und Inhalt der Datei genauer beschreibt und die [Nutzung der Daten in verschiedenen Programmiersprachen](https://frictionlessdata.io/tooling/libraries/#data-package) stark erleichtern kann, vgl. https://frictionlessdata.io/. Unter Zuhilfenahme des [Frictionless Framework](https://github.com/frictionlessdata/frictionless-py) können das Data Package und Objektliste im ***CSV***-Format wie folgt validiert werden:
 
->```poetry run frictionless validate https://raw.githubusercontent.com/wadoli/objektliste-kdp/master/datapackage.json```
+>```frictionless validate https://raw.githubusercontent.com/wadoli/objektliste-kdp/master/datapackage.json```
 
 #### Eindeutiger Primärschlüssel ODB-ID
 
