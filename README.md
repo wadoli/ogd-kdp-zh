@@ -40,6 +40,8 @@ Bisher festgesetzt und im obigen Verzeichnis und im GIS-Browser veröffentlicht 
 * Knonaueramt
 * Limmattal
 
+Weitere Inventarblätter sind administrativ bereits festgesetzt, aber noch nicht in geeigneter Form aufbereitet, um im obigen Verzeichnis publiziert werden zu können. Diese Inventarblätter können auf der Seite https://zh.ch/denkmalinventar unter dem Titel [Inventarblätter](https://www.zh.ch/de/planen-bauen/bauvorschriften/bauen-an-besonderer-lage/bauen-und-denkmalpflege.html#1187985502) abgerufen werden.
+
 Auf welche Objekte in der Objektliste sich ein Inventarblatt bezieht, kann über die Verlinkung des PDFs in der Tabellenspalte "publiziertes PDF"  der [Objektliste](#objektliste-denkmalschutzobjekte) ermittelt werden.
 
 ### Kontakt
