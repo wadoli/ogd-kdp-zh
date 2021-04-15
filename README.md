@@ -52,6 +52,6 @@ Weitere Inventarblätter wurden bereits administrativ festgesetzt, aber noch nic
 
 Auf welche Objekte in der Objektliste sich ein Inventarblatt bezieht, kann über die Verlinkung des PDFs in der Tabellenspalte "publiziertes PDF"  der [Objektliste](#objektliste-denkmalschutzobjekte) ermittelt werden.
 
-### Kontakt 📞
+## Kontakt
 
 Vgl. https://geolion.zh.ch/geodatensatz/1343
