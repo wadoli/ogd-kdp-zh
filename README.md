@@ -6,13 +6,15 @@ Das Inventar bildet die Grundlage für die Arbeit der [Denkmalpflege](https://zh
 
 ### Objektliste Denkmalschutzobjekte 📍
 
-In der Objektliste sind alle überkommunal, das heisst kantonal oder regional eingestuften Objekte verzeichnet. Zusätzlich vermerkt die Tabelle bereits bestehende Schutzmassnahmen wie eine öffentlich-rechtliche Eigentumsbeschränkung oder eine privatrechtliche Personaldienstbarkeit zugunsten des Kantons Zürich. Soweit vorhanden verweisen die Einträge zu den einzelnen Objekten in der Tabellenspalte "publiziertes PDF" auf ihre relevanten Inventarblätter.
+In der Objektliste sind alle überkommunalen Inventarobjekte, das heisst kantonal oder regional eingestufte Objekte, verzeichnet. Zusätzlich vermerkt die Tabelle bereits bestehende Schutzmassnahmen wie eine öffentlich-rechtliche Eigentumsbeschränkung oder eine privatrechtliche Personaldienstbarkeit zugunsten des Kantons Zürich. Soweit vorhanden verweisen die Einträge zu den einzelnen Objekten in der Tabellenspalte "publiziertes PDF" auf ihre relevanten Inventarblätter.
 
 Formate:
 * **CSV**: https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv (Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/denkmalschutzobjekte2)
 * Verschiedene Dateiformate via [GIS-Browser des Kantons Zürich](https://maps.zh.ch): http://maps.zh.ch/?topic=ArchDenkmalZH&amp;showtab=ogddownload (vgl. [Spezifikation REST-Schnittstelle für Datenbezug zur Einbindung in eigene Applikationen](https://www.zh.ch/de/planen-bauen/geoinformation/geodaten/geodatenshop.html#-51465694))
 * **WMS**-Webservice: https://wms.zh.ch/OGDArchDenkmalZH (vgl. https://geolion.zh.ch/geodatenservice/2094, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wms-denkmalschutzobjekte1)
  * **WFS**-Webservice: https://maps.zh.ch/wfs/OGDZHWFS (vgl. https://geolion.zh.ch/geodatenservice/2030, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wfs-denkmalschutzobjekte1)
+
+Die Objektliste im **CSV**-Format wird von der [Semantic MediaWiki-Datenbank der Denkmalpflege](https://ad.zh.ch/odb/) dreimal täglich (frühmorgens, mittags, abends) neu generiert. Aus dieser Datei werden die übrigen Formate täglich (bzw. nächtlich) von der [Abteilung Geoinformation](https://zh.ch/geoinformation) aufbereitet.
 
 Die **CSV**-Datei entspricht dem CSV-Format der deutschsprachigen Microsoft Excel-Versionen und lässt sich damit sowie mit Libre- und OpenOffice einfach per Doppelklick öffnen. Objekte, welche in mehreren politischen Gemeinden gleichzeitig liegen, werden mit einer Zeile pro Gemeinde aufgelistet. Die verschiedenen Zeilen eines Objekts lassen sich über die Objektkennung in der Spalte "ODB-ID" zusammenführen, vgl. [unten](#eindeutiger-primärschlüssel-odb-id).
 
@@ -36,6 +38,8 @@ Formate:
 * ESRI **Shapefile**: Download via [GIS-Browser des Kantons Zürich](https://maps.zh.ch): http://maps.zh.ch/?topic=BASISKARTEZH&amp;showtab=ogddownload (Unter «Format festlegen, Produkt bestellen» Radiobutton «Alle Produkte» auswählen, danach Produkt Nr. 517 «Denkmalschutzobjekte Polygone (OGD)» und Format «ESRI Shapefile (.shp)» wählen,  vgl. zusätzlich [Spezifikation REST-Schnittstelle für Datenbezug zur Einbindung in eigene Applikationen](https://www.zh.ch/de/planen-bauen/geoinformation/geodaten/geodatenshop.html#-51465694))
 * **WFS**-Webservice: https://maps.zh.ch/wfs/OGDZHWFS (vgl. https://geolion.zh.ch/geodatenservice/2030)
 
+Die Polygone kommen direkt und auf dem jeweils aktuellsten Stand aus der kantonalen GIS-Infrastruktur.
+
 ### Inventarblätter 📄
 
 Derzeit läuft bei der Denkmalpflege ein Projekt zur Revision des Inventars der Denkmalschutzobjekte von überkommunaler Bedeutung, vgl. https://zh.ch/denkmalinventar. Festgesetzte Inventarblätter der überarbeiteten Regionen werden laufend als PDF-Dateien unter der Lizenz [«Creative Commons Namensnennung 4.0 International» (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.de) im folgenden Verzeichnis veröffentlicht:
@@ -51,6 +55,8 @@ Bisher festgesetzt und im obigen Verzeichnis und im GIS-Browser veröffentlicht 
 Weitere Inventarblätter wurden bereits administrativ festgesetzt, aber noch nicht in geeigneter Form aufbereitet, um im obigen Verzeichnis publiziert werden zu können. Diese Inventarblätter können auf der Seite https://zh.ch/denkmalinventar unter dem Titel [Inventarblätter](https://www.zh.ch/de/planen-bauen/bauvorschriften/bauen-an-besonderer-lage/bauen-und-denkmalpflege.html#1187985502) abgerufen werden.
 
 Auf welche Objekte in der Objektliste sich ein Inventarblatt bezieht, kann über die Verlinkung des PDFs in der Tabellenspalte "publiziertes PDF"  der [Objektliste](#objektliste-denkmalschutzobjekte) ermittelt werden.
+
+Die Inventarblätter werden auf dem Stand ihrer Festsetzung veröffentlicht und können deshalb veraltete Informationen enthalten. Die Objektinformationen werden aber in der [Objektliste](#objektliste-denkmalschutzobjekte) ständig aktuell gehalten.
 
 ## Kontakt
 
