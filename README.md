@@ -24,9 +24,7 @@ Objekte, welche in mehreren politischen Gemeinden gleichzeitig liegen, werden mi
 
 Die Objektliste im **CSV**-Form enthält duplizierte Objektzeilen, um genau eine Gemeinde pro Zeile zuzusichern. Für die Weiterverarbeitung ist allerdings eine Datei mit eindeutigen Primärschlüssel-Werten in der Regel besser geeignet. Eine solche Form kann beispielsweise wie folgt unter Zuhilfenahme von [curl](https://github.com/curl/curl), [iconv](https://www.gnu.org/software/libiconv/) und [Miller](https://github.com/johnkerl/miller) erstellt werden:
 
-```shell
-curl -s https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv | iconv --from-code windows-1252 | mlr --csv --irs LF --fs semicolon --c2t nest --implode --values --across-records --nested-fs semicolon -f Gemeinde then sort -f Gemeinde,ODB-ID | mlr --t2c --ofs semicolon cat
-```
+>```curl -s https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv | iconv --from-code windows-1252 | mlr --csv --irs LF --fs semicolon --c2t nest --implode --values --across-records --nested-fs semicolon -f Gemeinde then sort -f Gemeinde,ODB-ID | mlr --t2c --ofs semicolon cat```
 
 ### Inventarblätter
 
