@@ -20,13 +20,21 @@ Zusätzlich gibt es zur Nutzung und Validierung der **CSV**-Datei in diesem Repo
 
 Objekte, welche in mehreren politischen Gemeinden gleichzeitig liegen, werden mit einer Zeile pro Gemeinde aufgelistet. Die verschiedenen Zeilen eines Objekts lassen sich über die Objektkennung in der Spalte "ODB-ID" zusammenführen.
 
+#### Eindeutiger Primärschlüssel ODB-ID
+
+Die Objektliste im **CSV**-Form duplizierte Objektzeilen, um genau eine Gemeinde pro Zeile zuzusichern. Für die Weiterverarbeitung ist allerdings eine Datei mit eindeutigen Primärschlüssel-Werten in der Regel besser geeignet. Eine solche Form kann beispielsweise wie folgt unter Zuhilfenahme von [curl](https://github.com/curl/curl), [iconv](https://www.gnu.org/software/libiconv/) und [Miller](https://github.com/johnkerl/miller) erstellt werden:
+
+```shell
+curl -s https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv | iconv --from-code windows-1252 | mlr --csv --irs LF --fs semicolon --c2t nest --implode --values --across-records --nested-fs semicolon -f Gemeinde then sort -f Gemeinde,ODB-ID | mlr --t2c --ofs semicolon cat
+```
+
 ### Inventarblätter
 
 Derzeit läuft bei der Denkmalpflege ein Projekt zur Revision des Inventars der Denkmalschutzobjekte von überkommunaler Bedeutung, vgl. https://zh.ch/denkmalinventar. Festgesetzte Inventarblätter der überarbeiteten Regionen werden laufend als PDF-Dateien unter der Lizenz [«Creative Commons Namensnennung 4.0 International» (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.de) im folgenden Verzeichnis veröffentlicht:
 
 https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/
 
-Bisher festgesetzt und veröffentlicht sind die Inventarblätter der Planungsregionen:
+Bisher festgesetzt und im obigen Verzeichnis und im GIS-Browser veröffentlicht sind die Inventarblätter der Planungsregionen:
 
 * Furttal
 * Knonaueramt
