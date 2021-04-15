@@ -14,15 +14,17 @@ Formate:
 * **WMS**-Webservice: https://wms.zh.ch/OGDArchDenkmalZH (vgl. https://geolion.zh.ch/geodatenservice/2094, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wms-denkmalschutzobjekte1)
  * **WFS**-Webservice: https://maps.zh.ch/wfs/OGDZHWFS (vgl. https://geolion.zh.ch/geodatenservice/2030, Opendata.swiss-Eintrag: https://opendata.swiss/de/dataset/wfs-denkmalschutzobjekte1)
 
-Die **CSV**-Datei entspricht dem CSV-Format der deutschsprachigen Microsoft Excel-Versionen und lässt sich damit sowie mit Libre- und OpenOffice einfach per Doppelklick öffnen.
+Die **CSV**-Datei entspricht dem CSV-Format der deutschsprachigen Microsoft Excel-Versionen und lässt sich damit sowie mit Libre- und OpenOffice einfach per Doppelklick öffnen. Objekte, welche in mehreren politischen Gemeinden gleichzeitig liegen, werden mit einer Zeile pro Gemeinde aufgelistet. Die verschiedenen Zeilen eines Objekts lassen sich über die Objektkennung in der Spalte "ODB-ID" zusammenführen, vgl. [unten](#eindeutiger-primärschlüssel-odb-id).
 
-Zusätzlich gibt es zur Nutzung und Validierung der **CSV**-Datei in diesem Repository ein [Data Package](datapackage.json), welches den Aufbau und Inhalt der Datei genauer beschreibt und die [Nutzung der Daten in verschiedenen Programmiersprachen](https://frictionlessdata.io/tooling/libraries/#data-package) stark erleichtern kann, vgl. https://frictionlessdata.io/.
+#### Data Package
 
-Objekte, welche in mehreren politischen Gemeinden gleichzeitig liegen, werden mit einer Zeile pro Gemeinde aufgelistet. Die verschiedenen Zeilen eines Objekts lassen sich über die Objektkennung in der Spalte "ODB-ID" zusammenführen.
+Zur Nutzung und Validierung der Objektliste im **CSV**-Format gibt es in diesem Repository ein [Data Package](datapackage.json), welches den Aufbau und Inhalt der Datei genauer beschreibt und die [Nutzung der Daten in verschiedenen Programmiersprachen](https://frictionlessdata.io/tooling/libraries/#data-package) stark erleichtern kann, vgl. https://frictionlessdata.io/. Unter Zuhilfenahme des [Frictionless Framework](https://github.com/frictionlessdata/frictionless-py) können das Data Package und Objektliste im ***CSV***-Format wie folgt validiert werden:
+
+>```poetry run frictionless validate https://raw.githubusercontent.com/wadoli/objektliste-kdp/master/datapackage.json```
 
 #### Eindeutiger Primärschlüssel ODB-ID
 
-Die Objektliste im **CSV**-Form enthält duplizierte Objektzeilen, um genau eine Gemeinde pro Zeile zuzusichern. Für die Weiterverarbeitung ist allerdings eine Datei mit eindeutigen Primärschlüssel-Werten in der Regel besser geeignet. Eine solche Form kann beispielsweise wie folgt unter Zuhilfenahme von [curl](https://github.com/curl/curl), [iconv](https://www.gnu.org/software/libiconv/) und [Miller](https://github.com/johnkerl/miller) erstellt werden:
+Die Objektliste im **CSV**-Format enthält duplizierte Objektzeilen, um genau eine Gemeinde pro Zeile zuzusichern. Für die Weiterverarbeitung ist allerdings eine Datei mit eindeutigen Primärschlüssel-Werten in der Regel besser geeignet. Eine solche Form kann beispielsweise wie folgt unter Zuhilfenahme von [curl](https://github.com/curl/curl), [iconv](https://www.gnu.org/software/libiconv/) und [Miller](https://github.com/johnkerl/miller) erstellt werden:
 
 >```curl -s https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv | iconv --from-code windows-1252 | mlr --csv --irs LF --fs semicolon --c2t nest --implode --values --across-records --nested-fs semicolon -f Gemeinde then sort -f Gemeinde,ODB-ID | mlr --t2c --ofs semicolon cat```
 
