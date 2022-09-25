@@ -164,7 +164,7 @@
             "description": "DE: X-Koordinate im Format LV95, Bezugssystem CH1903+\nEN: North coordinate LV95"
           }
         ],
-        "missingValues": [ "", "-" ]
+        "missingValues": [ "", "-", "–" ]
       },
       "format": "csv",
       "mediatype": "text/csv",
@@ -192,7 +192,7 @@
     }
   ],
   "homepage": "https://zh.ch/denkmalinventar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "contributors": [
     {
       "title": "Oliver Waddell",
