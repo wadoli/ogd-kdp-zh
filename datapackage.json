@@ -1,212 +1,265 @@
 {
-  "profile": "tabular-data-package",
-  "resources": [
-    {
-      "name": "denkmalschutzobjekte",
-      "path": "https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv",
-      "profile": "tabular-data-resource",
-      "schema": {
-        "fields": [
-          {
-            "name": "ODB-ID",
-            "type": "string",
-            "format": "default",
-            "title": "Objekt-Identifikator",
-            "constraints": {
-              "required": true,
-              "pattern": "(Objekt [0-9]+(; )?)+"
-            },"description": "DE: Eindeutige ID des Objekt in der Wiki-Datenbank der Denkmalpflege Kanton Zürich (vgl. zur Datenbank https://ad.zh.ch/odb). Achtung: Ist in der Tabelle nicht eindeutig! Liegt ein Objekt in mehreren politischen Gemeinden, wird für das Objekt pro Gemeinde eine Zeile ausgegeben.\nEN: This unique ID identifies the object in the built heritage services internal wiki database. Not unique in this table: If an object is located in multiple communes, one line per commune will be output."
-          },
-          {
-            "name": "Gemeinde",
-            "type": "string",
-            "format": "default",
-            "title": "Politische Gemeinde",
-            "description": "DE: Name der politischen Gemeinde gemäss dem Amtlichen Gemeindeverzeichnis (https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch.html). Achtung: Liegt ein Objekt in mehreren Gemeinden, wird für das Objekt pro Gemeinde eine Zeile ausgegeben.\nEN: Name of the political commune according to the Swiss official commune register (https://www.bfs.admin.ch/bfs/en/home/basics/swiss-official-commune-register.html). If an object is located in multiple communes, one line per commune will be output."
-          },
-          {
-            "name": "Ort",
-            "type": "string",
-            "format": "default",
-            "title": "Postalische Ortschaft",
-            "description": "DE: Name(n) der postalischen Ortschaft(en) gemäss dem Amtlichen Ortschaftenverzeichnis (https://www.cadastre.ch/de/services/service/registry/plz.html), mehrere getrennt durch Semikolon\nEN: Name(s) of the town or city according to the official directory of towns and cities (https://www.cadastre.ch/en/services/service/registry/plz.html), separated by semicolons"
-          },
-          {
-            "name": "PLZ",
-            "type": "string",
-            "format": "default",
-            "title": "Postleitzzahl",
-            "constraints": {
-              "pattern": "([0-9]{4}(; )?)+"
+    "profile": "tabular-data-package",
+    "resources": [
+        {
+            "profile": "tabular-data-resource",
+            "encoding": "windows-1252",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "ODB-ID",
+                        "type": "string",
+                        "format": "default",
+                        "title": "ODB-ID",
+                        "constraints": {
+                            "required": true,
+                            "pattern": "(Objekt [0-9]+(; )?)+"
+                        },
+                        "description": "DE: Eindeutige ID des Objekt in der Wiki-Datenbank der Denkmalpflege Kanton Zürich (vgl. zur Datenbank https://ad.zh.ch/odb). Achtung: Ist in der Tabelle nicht eindeutig! Liegt ein Objekt in mehreren politischen Gemeinden, wird für das Objekt pro Gemeinde eine Zeile ausgegeben.\nEN: This unique ID identifies the object in the built heritage services internal wiki database. Not unique in this table: If an object is located in multiple communes, one line per commune will be output.",
+                        "bareNumber": true
+                    },
+                    {
+                        "name": "Gemeinde",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Politische Gemeinde",
+                        "description": "DE: Name der politischen Gemeinde gemäss dem Amtlichen Gemeindeverzeichnis (https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch.html). Achtung: Liegt ein Objekt in mehreren Gemeinden, wird für das Objekt pro Gemeinde eine Zeile ausgegeben.\nEN: Name of the political commune according to the Swiss official commune register (https://www.bfs.admin.ch/bfs/en/home/basics/swiss-official-commune-register.html). If an object is located in multiple communes, one line per commune will be output.",
+                        "constraints": {
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "Ort",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Postalische Ortschaft",
+                        "description": "DE: Name(n) der postalischen Ortschaft(en) gemäss dem Amtlichen Ortschaftenverzeichnis (https://www.cadastre.ch/de/services/service/registry/plz.html), mehrere getrennt durch Semikolon\nEN: Name(s) of the town or city according to the official directory of towns and cities (https://www.cadastre.ch/en/services/service/registry/plz.html), separated by semicolons"
+                    },
+                    {
+                        "name": "PLZ",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Postleitzzahl",
+                        "constraints": {
+                            "pattern": "([0-9]{4}(; )?)+"
+                        },
+                        "description": "DE: Postleitzahl(en) der postalischen Ortschaft(en) gemäss dem Amtlichen Ortschaftenverzeichnis (https://www.cadastre.ch/de/services/service/registry/plz.html), mehrere getrennt durch Semikolon\nEN: Postcode(s) of the town or city according to the official directory of towns and cities (https://www.cadastre.ch/en/services/service/registry/plz.html), separated by semicolons"
+                    },
+                    {
+                        "name": "Strasse / Nr.",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Strassenadresse",
+                        "description": "DE: Strassenadresse(n), mehrere getrennt durch Semikolon\nEN: Street address(es), separated by semicolons"
+                    },
+                    {
+                        "name": "Ensemble",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Ensemble",
+                        "description": "DE:Ensembles, zu denen das Objekt gehört, mehrere getrennt durch Semikolon\nEN: Architectural ensemble(s) the object belongs to, separated by semicolons"
+                    },
+                    {
+                        "name": "Objekt",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Objektbezeichnung",
+                        "description": "DE: Bezeichnung des Objekts\nEN: Name of the object",
+                        "constraints": {
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "publiziertes PDF",
+                        "type": "string",
+                        "format": "uri",
+                        "title": "URL Inventarblatt",
+                        "description": "DE: URL des festgesetzten Inventarblatts zum Objekt soweit vorhanden und digitalisiert (PDF)\nEN: URL of the description of the object in German where available and digitized (PDF)"
+                    },
+                    {
+                        "name": "GVZ Nr.",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Gebäudeversicherungsnummer",
+                        "constraints": {
+                            "pattern": "([0-2][0-9]{2}([A-Z]{2})?[0-9]{5}(; )?)+"
+                        },
+                        "description": "DE: Versicherungsnummer(n) der Gebäudeversicherung des Kantons Zürich, mehrere getrennt durch Semikolon\nEN: Number(s) of the building as assigned by the building insurance of the Canton of Zurich, separated by semicolons"
+                    },
+                    {
+                        "name": "Katasternummer",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Katasternummer",
+                        "description": "DE: Die Grundstücksnummer der amtlichen Vermessung.\nEN: The property number of the official cadastral survey."
+                    },
+                    {
+                        "name": "EGID",
+                        "type": "string",
+                        "format": "default",
+                        "title": "EGID",
+                        "description": "DE: Der eidgenössische Gebäudeidentifikator (EGID) wird durch das Gebäude- und Wohnungsregister (GWR) des Bundesamtes für Statistik (BFS) generiert und erlaubt schweizweit eine eindeutige Identifikation des Gebäudes.\nEN: The federal building identificator EGID is generated by the Federal Register of Buildings and Dwellings (RBD), which is managed by the Federal Statistical Office (FSO) and allows the unambiguous identification of buildings in Switzerland.",
+                        "constraints": {
+                            "pattern": "([0-9]+(; )?)+"
+                        }
+                    },
+                    {
+                        "name": "Denkbankschluessel",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Denkbankschlüssel",
+                        "description": "DE: Eindeutige ID des Objekts in einem früheren Datenbanksystem der Denkmalpflege des Kantons Zürich\nEN: Unique ID of the object in the previous database used by the built heritage service"
+                    },
+                    {
+                        "name": "Baujahr",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Baujahr",
+                        "constraints": {
+                            "pattern": "((vor|um|nach) )?[0-9]+(( )?–( (vor|um|nach))?( )?[0-9]{4})?"
+                        },
+                        "description": "DE: Datierung des Objekts\nEN: Age determination of the object"
+                    },
+                    {
+                        "name": "Einstufung",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Einstufung",
+                        "constraints": {
+                            "enum": [
+                                "regional",
+                                "kantonal"
+                            ]
+                        },
+                        "description": "DE: Art der überkommunalen Bedeutsamkeit des Objekts gemäss PBG Klassierung: «-» (kein überkommunales Inventarobjekt), «kantonal» oder «regional»\nEN: Designation of object (none, regional or cantonal significance)"
+                    },
+                    {
+                        "name": "Datum Erlass",
+                        "format": "%d.%m.%Y",
+                        "type": "date",
+                        "title": "Datum Festsetzung Einstufung",
+                        "description": "DE: Datum, an welchem zum Objekt erstmals eine überkommunale Einstufung festgesetzt wurde\nEN: Date of first designation of the object"
+                    },
+                    {
+                        "name": "Erlass",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Erlass",
+                        "description": "DE: Erlass(e) zur Festsetzung des Objekts\nEN: Decree(s) establishing designation"
+                    },
+                    {
+                        "name": "Eigentumsbeschränkung",
+                        "type": "string",
+                        "format": "default",
+                        "title": "Eigentumsbeschränkung",
+                        "constraints": {
+                            "enum": [
+                                "ÖREB",
+                                "PD"
+                            ]
+                        },
+                        "description": "DE: Rechtliche Sicherung im Grundbuch: «ÖREB» (öffentlich-rechtliche Eigentumsbeschränkung) oder «PD» (Personaldienstbarkeit)\nEN: Public legal restrictions with regard to changing or demolishing the object"
+                    },
+                    {
+                        "name": "Grundbucheintrag",
+                        "format": "%d.%m.%Y",
+                        "type": "date",
+                        "title": "Grundbucheintrag",
+                        "description": "DE: Datum Eintrag rechtliche Sicherung im Grundbuch\nEN: Date of entry of public legal restrictions in land register"
+                    },
+                    {
+                        "name": "E-Koordinate",
+                        "type": "number",
+                        "decimalChar": ",",
+                        "format": "default",
+                        "title": "Y-Koordinate",
+                        "constraints": {
+                            "required": true,
+                            "minimum": 2668888,
+                            "maximum": 2717000
+                        },
+                        "description": "DE: Y-Koordinate im Format LV95, Bezugssystem CH1903+\nEN: East coordinate LV95",
+                        "bareNumber": true
+                    },
+                    {
+                        "name": "N-Koordinate",
+                        "type": "number",
+                        "decimalChar": ",",
+                        "format": "default",
+                        "title": "X-Koordinate",
+                        "constraints": {
+                            "required": true,
+                            "minimum": 1223700,
+                            "maximum": 1283800
+                        },
+                        "description": "DE: X-Koordinate im Format LV95, Bezugssystem CH1903+\nEN: North coordinate LV95",
+                        "bareNumber": true
+                    }
+                ],
+                "missingValues": [
+                    "",
+                    "-",
+                    "–"
+                ],
+                "primaryKey": [
+                    "ODB-ID"
+                ]
             },
-			"description": "DE: Postleitzahl(en) der postalischen Ortschaft(en) gemäss dem Amtlichen Ortschaftenverzeichnis (https://www.cadastre.ch/de/services/service/registry/plz.html), mehrere getrennt durch Semikolon\nEN: Postcode(s) of the town or city according to the official directory of towns and cities (https://www.cadastre.ch/en/services/service/registry/plz.html), separated by semicolons"
-          },
-          {
-            "name": "Strasse / Nr.",
-            "type": "string",
-            "format": "default",
-            "title": "Strassenadresse",
-            "description": "DE: Strassenadresse(n), mehrere getrennt durch Semikolon\nEN: Street address(es), separated by semicolons"
-          },
-          {
-            "name": "Ensemble",
-            "type": "string",
-            "format": "default",
-            "title": "Ensemble",
-            "description": "DE:Ensembles, zu denen das Objekt gehört, mehrere getrennt durch Semikolon\nEN: Architectural ensemble(s) the object belongs to, separated by semicolons"
-          },
-          {
-            "name": "Objekt",
-            "type": "string",
-            "format": "default",
-            "title": "Objektbezeichnung",
-            "description": "DE: Bezeichnung des Objekts\nEN: Name of the object"
-          },
-          {
-            "name": "publiziertes PDF",
-            "type": "string",
-            "format": "uri",
-            "title": "URL Inventarblatt",
-            "description": "DE: URL des festgesetzten Inventarblatts zum Objekt soweit vorhanden und digitalisiert (PDF)\nEN: URL of the description of the object in German where available and digitized (PDF)"
-          },
-          {
-            "name": "GVZ Nr.",
-            "type": "string",
-            "format": "default",
-            "title": "Gebäudeversicherungsnummer",
-            "constraints": {
-              "pattern": "([0-2][0-9]{2}([A-Z]{2})?[0-9]{5}(; )?)+"
+            "name": "denkmalschutzobjekte",
+            "path": "https://odb.zh.ch/odbwiki/mediawiki/files/pdfs/objektliste_mit_PDF-Links.csv",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "title": "Inventar der Denkmalschutzobjekte von überkommunaler Bedeutung",
+            "dialect": {
+                "delimiter": ";",
+                "doubleQuote": true,
+                "lineTerminator": "\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
             },
-            "description": "DE: Versicherungsnummer(n) der Gebäudeversicherung des Kantons Zürich, mehrere getrennt durch Semikolon\nEN: Number(s) of the building as assigned by the building insurance of the Canton of Zurich, separated by semicolons"
-          },
-          {
-            "name": "Denkbankschluessel",
-            "type": "string",
-            "format": "default",
-            "title": "Denkbankschlüssel",
-            "description": "DE: Eindeutige ID des Objekts in einem früheren Datenbanksystem der Denkmalpflege des Kantons Zürich\nEN: Unique ID of the object in the previous database used by the built heritage service"
-          },
-          {
-            "name": "Baujahr",
-            "type": "string",
-            "format": "default",
-            "title": "Baujahr",
-            "constraints": {
-              "pattern": "((vor|um|nach) )?[0-9]+(( )?–( (vor|um|nach))?( )?[0-9]{4})?"
-            },
-            "description": "DE: Datierung des Objekts\nEN: Age determination of the object"
-          },
-          {
-            "name": "Einstufung",
-            "type": "string",
-            "format": "default",
-            "title": "Einstufung",
-            "constraints": {
-              "enum": [ "regional", "kantonal" ]
-            },
-            "description": "DE: Art der überkommunalen Bedeutsamkeit des Objekts gemäss PBG Klassierung: «-» (kein überkommunales Inventarobjekt), «kantonal» oder «regional»\nEN: Designation of object (none, regional or cantonal significance)"
-          },
-          {
-            "name": "Datum Erlass",
-            "format": "%d.%m.%Y",
-            "type": "date",
-            "title": "Datum Festsetzung Einstufung",
-            "description": "DE: Datum, an welchem zum Objekt erstmals eine überkommunale Einstufung festgesetzt wurde\nEN: Date of first designation of the object"
-          },
-          {
-            "name": "Erlass",
-            "type": "string",
-            "format": "default",
-            "title": "Erlass",
-            "description": "DE: Erlass(e) zur Festsetzung des Objekts\nEN: Decree(s) establishing designation"
-          },
-          {
-            "name": "Eigentumsbeschränkung",
-            "type": "string",
-            "format": "default",
-            "title": "Eigentumsbeschränkung",
-            "constraints": {
-              "enum": [ "ÖREB", "PD" ]
-            },
-            "description": "DE: Rechtliche Sicherung im Grundbuch: «ÖREB» (öffentlich-rechtliche Eigentumsbeschränkung) oder «PD» (Personaldienstbarkeit)\nEN: Public legal restrictions with regard to changing or demolishing the object"
-          },
-          {
-            "name": "Grundbucheintrag",
-            "format": "%d.%m.%Y",
-            "type": "date",
-            "title": "Grundbucheintrag",
-            "description": "DE: Datum Eintrag rechtliche Sicherung im Grundbuch\nEN: Date of entry of public legal restrictions in land register"
-          },
-          {
-            "name": "E-Koordinate",
-            "type": "number",
-            "decimalChar": ",",
-            "format": "default",
-            "title": "Y-Koordinate",
-            "constraints": {
-              "required": true,
-              "minimum": 2668888,
-              "maximum": 2717000
-            },
-            "description": "DE: Y-Koordinate im Format LV95, Bezugssystem CH1903+\nEN: East coordinate LV95"
-          },
-          {
-            "name": "N-Koordinate",
-            "type": "number",
-            "decimalChar": ",",
-            "format": "default",
-            "title": "X-Koordinate",
-            "constraints": {
-              "required": true,
-              "minimum": 1223700,
-              "maximum": 1283800
-            },
-            "description": "DE: X-Koordinate im Format LV95, Bezugssystem CH1903+\nEN: North coordinate LV95"
-          }
-        ],
-        "missingValues": [ "", "-", "–" ]
-      },
-      "format": "csv",
-      "mediatype": "text/csv",
-      "title": "Inventar der Denkmalschutzobjekte von überkommunaler Bedeutung",
-      "dialect": {
-        "delimiter": ";",
-        "doubleQuote": true,
-        "lineTerminator": "\n",
-        "quoteChar": "\"",
-        "skipInitialSpace": true,
-        "header": true
-      },
-      "encoding": "windows-1252",
-      "description": "Das Inventar bildet die Grundlage für die Arbeit der Denkmalpflege. In der Tabelle sind alle überkommunal, das heisst kantonal oder regional eingestuften Objekte verzeichnet. Zusätzlich vermerkt die Tabelle bereits bestehende Schutzmassnahmen wie eine öffentlich-rechtliche Eigentumsbeschränkung oder eine privatrechtliche Personaldienstbarkeit zugunsten des Kantons Zürich."
-    }
-  ],
-  "name": "ogd-kdp-ktzh",
-  "title": "Offene Behördendaten der Denkmalpflege Kanton Zürich",
-  "description": "DE: Dieses Data Package beschreibt die die offenen Behördendaten der Denkmalpflege Kanton Zürich.\nEN: This dataset describes the open government data offerings of the built heritage service of the canton of Zurich.",
-  "licenses": [
-    {
-      "name": "CC0-1.0",
-      "title": "CC0 1.0",
-      "path": "https://creativecommons.org/publicdomain/zero/1.0/"
-    }
-  ],
-  "homepage": "https://zh.ch/denkmalinventar",
-  "version": "1.0.1",
-  "contributors": [
-    {
-      "title": "Oliver Waddell",
-      "email": "oliver.waddell@bd.zh.ch",
-      "path": "https://zh.ch/denkmalpflege",
-      "role": "author",
-      "organization": "Denkmalpflege Kanton Zürich"
-    }
-  ],
-  "keywords": [
-    "denkmalpflege",
-    "inventar",
-    "objektliste",
-    "built heritage",
-    "baukultur"
-  ]
+            "description": "Das Inventar bildet die Grundlage für die Arbeit der Denkmalpflege. In der Tabelle sind alle überkommunal, das heisst kantonal oder regional eingestuften Objekte verzeichnet. Zusätzlich vermerkt die Tabelle bereits bestehende Schutzmassnahmen wie eine öffentlich-rechtliche Eigentumsbeschränkung oder eine privatrechtliche Personaldienstbarkeit zugunsten des Kantons Zürich.",
+            "licenses": [
+                {
+                    "name": "CC-BY-4.0",
+                    "title": "Creative Commons Attribution 4.0",
+                    "path": "https://creativecommons.org/licenses/by/4.0/"
+                }
+            ],
+            "primaryKeys": [
+                "ODB-ID"
+            ],
+            "foreignKeys": []
+        }
+    ],
+    "name": "ogd-kdp-ktzh",
+    "title": "Offene Behördendaten der Denkmalpflege Kanton Zürich",
+    "description": "DE: Dieses Data Package beschreibt die die offenen Behördendaten der Denkmalpflege Kanton Zürich.\nEN: This dataset describes the open government data offerings of the built heritage service of the canton of Zurich.",
+    "licenses": [
+        {
+            "name": "CC0-1.0",
+            "title": "CC0 1.0",
+            "path": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+    ],
+    "homepage": "https://zh.ch/denkmalinventar",
+    "version": "1.0.2",
+    "contributors": [
+        {
+            "title": "Oliver Waddell",
+            "email": "oliver.waddell@bd.zh.ch",
+            "path": "https://zh.ch/denkmalpflege",
+            "role": "author",
+            "organization": "Denkmalpflege Kanton Zürich"
+        }
+    ],
+    "keywords": [
+        "denkmalpflege",
+        "inventar",
+        "objektliste",
+        "built heritage",
+        "baukultur"
+    ],
+    "id": "https://opendata.swiss/de/perma/7e480b7e-3fd5-d9f7-854b-5fdab17ed4fd@geoinformation-kanton-zuerich"
 }
